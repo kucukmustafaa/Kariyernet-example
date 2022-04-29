@@ -18,20 +18,12 @@ public class BasePage {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
-    private static HashMap<String,String> dataList=new HashMap<>();
 
     public BasePage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
 
-    public void storeData(String key,String value) {
-        dataList.put(key,value);
-    }
-
-    public String getData(String key){
-        return dataList.get(key);
-    }
 
     protected void click(By by){
         WebElement element=this.wait.until(ExpectedConditions.visibilityOfElementLocated(by));
@@ -64,7 +56,7 @@ public class BasePage {
         element.sendKeys(Keys.TAB);
     }
 
-    protected void waitSeconds(int seconds){
+    public void waitSeconds(int seconds){
         try {
             Thread.sleep(seconds*1000);
             System.out.println(seconds+" saniye bekleniyor.");

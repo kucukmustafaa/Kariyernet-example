@@ -1,5 +1,6 @@
 package Page.HomePage;
 
+import Base.BasePage;
 import Page.RegisterPage.RegisterPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
