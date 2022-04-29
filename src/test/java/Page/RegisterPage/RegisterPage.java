@@ -5,7 +5,6 @@ import Base.DataStore;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import static Page.RegisterPage.RegisterPageElements.*;
 
 public class RegisterPage extends BasePage {
@@ -67,6 +66,16 @@ public class RegisterPage extends BasePage {
         return this;
     }
 
+
+    public RegisterPage isUserRegisterSuccess(){
+        String username=getText(usernameTextLabel);
+        String name= (String) DataStore.get("register_name");
+        String surname= (String) DataStore.get("register_surname");
+        String exptectedUsername=name+" "+surname;
+        Assert.assertTrue(exptectedUsername.equals(username));
+        DataStore.put("register_username",username);
+        return this;
+    }
 
 
 

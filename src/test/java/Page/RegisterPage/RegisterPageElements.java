@@ -19,6 +19,11 @@ public class RegisterPageElements {
     public final static By emailTextBoxErrorMessage=By.id("email-error");
     public final static By passwordTextBoxErrorMessage=By.id("password-error");
 
+    public final static By usernameTextLabel=By.cssSelector("div[class='name']>a>span");
+
+
+    public final static By exitButton=By.xpath("//div[@class='after-login']//a[text()='Çıkış']");
+
 
 
 

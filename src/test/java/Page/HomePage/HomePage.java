@@ -14,7 +14,6 @@ public class HomePage extends BasePage {
         super(driver, wait);
     }
 
-
     public HomePage closePopup(){
         click(closePopupButton);
         return this;
