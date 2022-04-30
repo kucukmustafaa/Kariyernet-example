@@ -2,6 +2,7 @@ package Page.RegisterPage;
 
 import Base.BasePage;
 import Base.DataStore;
+import Page.HomePage.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -31,11 +32,10 @@ public class RegisterPage extends BasePage {
     }
 
     public RegisterPage acceptServiceContract(){
-        click(serviceContactCheckBox);
+        click(serviceContactLabel);
         click(acceptContractButton);
         return this;
     }
-
 
     public RegisterPage clickRegisterButton(){
         click(registerButton);
@@ -77,6 +77,8 @@ public class RegisterPage extends BasePage {
         return this;
     }
 
-
+    public HomePage goToHomePage(){
+        return new HomePage(driver,wait);
+    }
 
 }

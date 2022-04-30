@@ -69,13 +69,8 @@ public class BasePage {
         return element.getText();
     }
 
-    protected WebElement getElement(By by){
-        WebElement element=null;
-        try {
-            element=this.wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+    protected WebElement findElement(By by){
+        WebElement element=this.wait.until(ExpectedConditions.visibilityOfElementLocated(by));;
         return element;
     }
 
@@ -88,6 +83,16 @@ public class BasePage {
             System.out.println(by.toString()+" elementine onFocus ile tiklanamadi.");
         }
     }
+
+    public boolean isChecked(By by){
+        return findElement(by).isSelected();
+    }
+
+    public String getAttribute(By by,String attributeName){
+        return findElement(by).getAttribute(attributeName);
+    }
+
+
 
     protected List<WebElement> getElementList(By by){
         List<WebElement> elementList = null;
