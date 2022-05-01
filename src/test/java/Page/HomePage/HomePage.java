@@ -5,6 +5,8 @@ import Page.RegisterPage.RegisterPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import org.apache.log4j.Logger;
+
 import static Page.HomePage.HomePageElements.*;
 
 
@@ -14,8 +16,10 @@ public class HomePage extends BasePage {
         super(driver, wait);
     }
 
+    private Logger logger = Logger.getLogger(HomePage.class);
+
     public HomePage closePopup(){
-        click(closePopupButton);
+        logger.info("Ana sayfada popup kapatıldı.");
         return this;
     }
 

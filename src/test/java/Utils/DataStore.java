@@ -1,4 +1,4 @@
-package Base;
+package Utils;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -25,7 +25,4 @@ public class DataStore {
         return null;
     }
 
-    static synchronized void clear() {
-        map.get().clear();
-    }
 }

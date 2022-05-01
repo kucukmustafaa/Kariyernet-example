@@ -1,6 +1,6 @@
 package Base;
 
-
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +18,9 @@ public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
+    private Logger logger = Logger.getLogger(BasePage.class);
+
+
     public BasePage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
@@ -28,9 +31,9 @@ public class BasePage {
         WebElement element=this.wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         try {
             element.click();
-            System.out.println(by.toString()+" elementine tiklandi.");
+            logger.info(by.toString()+" elementine tiklandi.");
         }catch (Exception e){
-            System.out.println(by.toString()+" elementine tiklanamadi.");
+            logger.error(by.toString()+" elementine tiklanamadi.");
         }
     }
 
@@ -38,9 +41,9 @@ public class BasePage {
         WebElement element=this.wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         try {
             element.sendKeys(text);
-            System.out.println(by.toString()+" elementine "+text+" degeri yazildi..");
+            logger.info(by.toString()+" elementine "+text+" degeri yazildi..");
         }catch (Exception e){
-            System.out.println(by.toString()+" elementine "+text+ "degeri yazilmadi.");
+            logger.error(by.toString()+" elementine "+text+ "degeri yazilmadi.");
         }
     }
 
@@ -58,9 +61,9 @@ public class BasePage {
     public void waitSeconds(int seconds){
         try {
             Thread.sleep(seconds*1000);
-            System.out.println(seconds+" saniye bekleniyor.");
+            logger.info(seconds+" saniye bekleniyor.");
         } catch (Exception e){
-            System.out.println("bekleme gerceklesmedi.");
+            logger.error("bekleme gerceklesmedi.");
         }
     }
 
@@ -78,9 +81,9 @@ public class BasePage {
         WebElement element=this.wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         try {
             element.click();
-            System.out.println(by.toString()+" elementine onFocus ile tiklandi.");
+            logger.info(by.toString()+" elementine onFocus ile tiklandi.");
         }catch (Exception e){
-            System.out.println(by.toString()+" elementine onFocus ile tiklanamadi.");
+            logger.error(by.toString()+" elementine onFocus ile tiklanamadi.");
         }
     }
 
@@ -98,9 +101,9 @@ public class BasePage {
         List<WebElement> elementList = null;
         try {
             elementList=this.wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
-            System.out.println(by.toString()+" elementin listesi geldi.");
+            logger.info(by.toString()+" elementin listesi geldi.");
         }catch (Exception e){
-            System.out.println(by.toString()+" element listesi gelmedi..");
+            logger.error(by.toString()+" element listesi gelmedi..");
         }
         return elementList;
     }
@@ -135,9 +138,9 @@ public class BasePage {
         WebElement element=this.wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         try {
             actions.doubleClick(element).perform();
-            System.out.println(by.toString()+" elementine tiklandi.");
+            logger.info(by.toString()+" elementine tiklandi.");
         }catch (Exception e){
-            System.out.println(by.toString()+" elementine tiklanamadi.");
+            logger.error(by.toString()+" elementine tiklanamadi.");
         }
     }
 

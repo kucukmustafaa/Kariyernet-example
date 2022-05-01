@@ -11,8 +11,6 @@ public class RegisterPageElements {
     public final static By serviceContactLabel=By.cssSelector("label[class='style-checkbox serviceContactLabel']");
     public final static By serviceContactCheckBox=By.id("serviceContact");
 
-    public final static By communicationContractCheckBox=By.id("communicationContract");
-    public final static By explicitConsentContractCheckBox=By.id("explicitConsentContract");
     public final static By acceptContractButton=By.id("btnModalYesCallback");
     public final static By registerButton=By.xpath("//button[contains(@class,'btn-submit')]");
 

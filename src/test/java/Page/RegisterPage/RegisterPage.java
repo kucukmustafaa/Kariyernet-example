@@ -1,8 +1,10 @@
 package Page.RegisterPage;
 
 import Base.BasePage;
-import Base.DataStore;
+
+import Utils.DataStore;
 import Page.HomePage.HomePage;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -14,8 +16,12 @@ public class RegisterPage extends BasePage {
         super(driver, wait);
     }
 
+    private Logger logger = Logger.getLogger(RegisterPage.class);
+
+
     public RegisterPage isRegisterPageOpen(){
         Assert.assertTrue(isDisplayed(nameTextBox) && isDisplayed(passwordTextBox));
+        logger.info("Üye kayıt sayfası başarılı şekilde açıldı.");
         return this;
     }
 
@@ -45,24 +51,28 @@ public class RegisterPage extends BasePage {
     public RegisterPage verifyNameErrorMessage(String message){
         String actualErrorMessage=getText(nameTextBoxErrorMessage);
         Assert.assertEquals(actualErrorMessage,message);
+        logger.info("isim alanında hata mesajı başarılı şekilde çıkmıştır.");
         return this;
     }
 
     public RegisterPage verifySurnameErrorMessage(String message){
         String actualErrorMessage=getText(surnameTextBoxErrorMessage);
         Assert.assertEquals(actualErrorMessage,message);
+        logger.info("soyisim alanında hata mesajı başarılı şekilde çıkmıştır.");
         return this;
     }
 
     public RegisterPage verifyEmailErrorMessage(String message){
         String actualErrorMessage=getText(emailTextBoxErrorMessage);
         Assert.assertEquals(actualErrorMessage,message);
+        logger.info("email alanında hata mesajı başarılı şekilde çıkmıştır.");
         return this;
     }
 
     public RegisterPage verifyPasswordErrorMessage(String message){
         String actualErrorMessage=getText(passwordTextBoxErrorMessage);
         Assert.assertEquals(actualErrorMessage,message);
+        logger.info("şifre alanında hata mesajı başarılı şekilde çıkmıştır.");
         return this;
     }
 
