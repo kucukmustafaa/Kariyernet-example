@@ -32,24 +32,22 @@ public class BaseTest {
             if (selectBrowser.equals("chrome")){
                 WebDriverManager.chromedriver().setup();
                 driver.set(new ChromeDriver(OptionsManager.getChromeOptions()));
-                wait=new WebDriverWait(driver.get(), Duration.ofSeconds(30));
+                wait=new WebDriverWait(getDriver(), Duration.ofSeconds(30));
                 driver.get().get(WEB_URL);
             }else {
                 WebDriverManager.firefoxdriver().setup();
                 driver.set(new FirefoxDriver(OptionsManager.getFirefoxOptions()));
-                wait=new WebDriverWait(driver.get(), Duration.ofSeconds(30));
+                wait=new WebDriverWait(getDriver(), Duration.ofSeconds(30));
                 driver.get().get(WEB_URL);
             }
         }else {
             if (selectBrowser.equals("chrome")){
-                WebDriverManager.chromedriver().setup();
                 driver.set(new RemoteWebDriver(new URL(HUB_ADDRESS), OptionsManager.getChromeOptions()));
-                wait=new WebDriverWait(driver.get(), Duration.ofSeconds(30));
+                wait=new WebDriverWait(getDriver(), Duration.ofSeconds(30));
                 driver.get().get(WEB_URL);
             }else {
-                WebDriverManager.firefoxdriver().setup();
                 driver.set(new RemoteWebDriver(new URL(HUB_ADDRESS), OptionsManager.getFirefoxOptions()));
-                wait=new WebDriverWait(driver.get(), Duration.ofSeconds(30));
+                wait=new WebDriverWait(getDriver(), Duration.ofSeconds(30));
                 driver.get().get(WEB_URL);
             }
         }

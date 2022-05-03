@@ -21,19 +21,19 @@ public class TestListener extends BaseTest implements ITestListener {
     public void onFinish(ITestContext iTestContext) {
         ExtentReportManager.flushReport();
     }
+
     @Override
     public void onTestStart(ITestResult iTestResult) {
         ExtentReportManager.createExtentTest(getTestMethodName(iTestResult));
     }
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        ExtentReportManager.getExtentTest().pass(getTestMethodName(iTestResult));
+        ExtentReportManager.getExtentTest().pass(getTestMethodName(iTestResult)+" test complete.");
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        System.out.println(getTestMethodName(iTestResult) + " test is failed.");
-        ExtentReportManager.getExtentTest().fail(getTestMethodName((ITestResult) iTestResult.getThrowable()));
+        ExtentReportManager.getExtentTest().fail(getTestMethodName(iTestResult)+ " test failed");
     }
 
     @Override
