@@ -11,6 +11,7 @@ public class RegisterPageTest extends BaseTest {
     @Test
     public void test1() {
         new HomePage(getDriver(),wait).
+                closePopup().
                 goToRegisterPage().
                 isRegisterPageOpen().
                 fillRegisterData("ali","veli","ali.veli@gmail.com","Kariyer34").
@@ -25,6 +26,7 @@ public class RegisterPageTest extends BaseTest {
     public void test2() {
 
         new HomePage(getDriver(),wait).
+                closePopup().
                 goToRegisterPage().
                 isRegisterPageOpen().
                 fillRegisterData("ali","veli","ali.veli3434@gmail.com","Kariyer34").
@@ -40,6 +42,7 @@ public class RegisterPageTest extends BaseTest {
     @Test
     public void test3() {
         new HomePage(getDriver(),wait).
+                closePopup().
                 goToRegisterPage().
                 isRegisterPageOpen().
                 fillRegisterData("a","a","a","a").
@@ -55,6 +58,7 @@ public class RegisterPageTest extends BaseTest {
     @Test
     public void test4() {
         new HomePage(getDriver(),wait).
+                closePopup().
                 goToRegisterPage().
                 isRegisterPageOpen().
                 fillRegisterData("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@gmail.com","aaaDFS234aaaaaaaaaaaaaaaaaaaaaaaaaaaa").
@@ -69,6 +73,7 @@ public class RegisterPageTest extends BaseTest {
     @Test
     public void test5() {
         new HomePage(getDriver(),wait).
+                closePopup().
                 goToRegisterPage().
                 isRegisterPageOpen().
                 fillRegisterData("","","","").
@@ -85,6 +90,7 @@ public class RegisterPageTest extends BaseTest {
     public void test6() {
 
         new HomePage(getDriver(),wait).
+                closePopup().
                 goToRegisterPage().
                 isRegisterPageOpen().
                 fillRegisterData("ali","veli","ali.veli3434@gmail.com","Kariyer34").
@@ -102,6 +108,7 @@ public class RegisterPageTest extends BaseTest {
     @Test
     public void test7() {
         new HomePage(getDriver(),wait).
+                closePopup().
                 goToRegisterPage().
                 isRegisterPageOpen().
                 fillRegisterData("Ali","Veli","ali.veli3434@gmail.com","4950Kariyer").
@@ -116,6 +123,7 @@ public class RegisterPageTest extends BaseTest {
     public void test8() {
 
         new HomePage(getDriver(),wait).
+                closePopup().
                 goToRegisterPage().
                 isRegisterPageOpen().
                 fillRegisterData("ali","veli","asf'^+'!'^!ASDA@kariyer.com","Kariyer34").
@@ -130,6 +138,7 @@ public class RegisterPageTest extends BaseTest {
     public void test9() {
 
         new HomePage(getDriver(),wait).
+                closePopup().
                 goToRegisterPage().
                 isRegisterPageOpen().
                 fillRegisterData("ali","veli","kariyer@kariyer","Kariyer34").
@@ -145,6 +154,7 @@ public class RegisterPageTest extends BaseTest {
     public void test10() {
 
         new HomePage(getDriver(),wait).
+                closePopup().
                 goToRegisterPage().
                 isRegisterPageOpen().
                 fillRegisterData("ali","veli","kariyer34random1234@gmail.com","Kariyer123").
@@ -160,6 +170,7 @@ public class RegisterPageTest extends BaseTest {
     public void test11() {
 
         new HomePage(getDriver(),wait).
+                closePopup().
                 goToRegisterPage().
                 isRegisterPageOpen().
                 isUserRegisterSuccess();

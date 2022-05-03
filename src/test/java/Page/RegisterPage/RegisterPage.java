@@ -2,6 +2,8 @@ package Page.RegisterPage;
 
 import Base.BasePage;
 
+import Page.LoginPage.LoginPage;
+import Utils.CustomLogger;
 import Utils.DataStore;
 import Page.HomePage.HomePage;
 import org.apache.log4j.Logger;
@@ -16,7 +18,7 @@ public class RegisterPage extends BasePage {
         super(driver, wait);
     }
 
-    private Logger logger = Logger.getLogger(RegisterPage.class);
+    private CustomLogger logger = new CustomLogger(RegisterPage.class);
 
 
     public RegisterPage isRegisterPageOpen(){
@@ -87,7 +89,7 @@ public class RegisterPage extends BasePage {
         return this;
     }
 
-    public HomePage goToHomePage(){
+    public HomePage goToHomePage(){;
         return new HomePage(driver,wait);
     }
 

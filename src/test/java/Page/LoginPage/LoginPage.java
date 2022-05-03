@@ -2,7 +2,10 @@ package Page.LoginPage;
 
 import Base.BasePage;
 
+import Page.HomePage.HomePage;
+import Utils.CustomLogger;
 import Utils.DataStore;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -16,8 +19,12 @@ public class LoginPage extends BasePage {
         super(driver, wait);
     }
 
+    private CustomLogger logger = new CustomLogger(LoginPage.class);
+
+
     public LoginPage isLoginPageOpen(){
         Assert.assertTrue(isDisplayed(emailTextBox) && isDisplayed(passwordTextBox));
+        logger.info("Login sayfası başarılı şekilde açıldı.");
         return this;
     }
 

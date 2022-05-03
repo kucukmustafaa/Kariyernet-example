@@ -16,7 +16,7 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    protected String env=""; // local -- remote
+    protected String env="local"; // local -- remote
     protected String selectBrowser = "chrome";
     protected WebDriverWait wait;
     protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();

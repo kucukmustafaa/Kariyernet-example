@@ -1,6 +1,6 @@
 package Base;
 
-import org.apache.log4j.Logger;
+import Utils.CustomLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -18,14 +17,13 @@ public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-    private Logger logger = Logger.getLogger(BasePage.class);
+    private CustomLogger logger = new CustomLogger(BasePage.class);
 
 
     public BasePage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
-
 
     protected void click(By by){
         WebElement element=this.wait.until(ExpectedConditions.visibilityOfElementLocated(by));
@@ -58,7 +56,7 @@ public class BasePage {
         element.sendKeys(Keys.TAB);
     }
 
-    public void waitSeconds(int seconds){
+    protected void waitSeconds(int seconds){
         try {
             Thread.sleep(seconds*1000);
             logger.info(seconds+" saniye bekleniyor.");
