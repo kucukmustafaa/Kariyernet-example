@@ -1,7 +1,8 @@
 package Page.LoginPage;
 
 import Base.BasePage;
-import Base.DataStore;
+
+import Utils.DataStore;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
