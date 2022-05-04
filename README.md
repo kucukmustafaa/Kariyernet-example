@@ -4,7 +4,7 @@
 #### * Java
 #### * Extent Report
 #### * Selenium
-#### * Selenium(Docker)
+#### * Selenium Grid(Docker)
 #### * Maven
 #### * Testng
 #### * Webdrivermanager
