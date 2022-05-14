@@ -34,7 +34,7 @@ public class BaseTest {
                 driver.set(new ChromeDriver(OptionsManager.getChromeOptions()));
                 wait=new WebDriverWait(getDriver(), Duration.ofSeconds(30));
                 driver.get().get(WEB_URL);
-            }else {
+            }else if (selectBrowser.equals("firefox")){
                 WebDriverManager.firefoxdriver().setup();
                 driver.set(new FirefoxDriver(OptionsManager.getFirefoxOptions()));
                 wait=new WebDriverWait(getDriver(), Duration.ofSeconds(30));
@@ -45,7 +45,7 @@ public class BaseTest {
                 driver.set(new RemoteWebDriver(new URL(HUB_ADDRESS), OptionsManager.getChromeOptions()));
                 wait=new WebDriverWait(getDriver(), Duration.ofSeconds(30));
                 driver.get().get(WEB_URL);
-            }else {
+            }else if (selectBrowser.equals("firefox")){
                 driver.set(new RemoteWebDriver(new URL(HUB_ADDRESS), OptionsManager.getFirefoxOptions()));
                 wait=new WebDriverWait(getDriver(), Duration.ofSeconds(30));
                 driver.get().get(WEB_URL);
