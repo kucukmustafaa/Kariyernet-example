@@ -2,12 +2,8 @@ package Test;
 
 import Base.BaseTest;
 import Page.HomePage.HomePage;
-import Utils.TestListener;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
-@Listeners(TestListener.class)
 public class RegisterPageTest extends BaseTest {
 
     @Test(groups = {"regression","smoke"},description = "Başarılı üyelik oluşturma")
