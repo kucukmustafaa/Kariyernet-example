@@ -24,7 +24,7 @@ public class TestListener extends BaseTest implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
-        ExtentReportManager.createExtentTest(getTestMethodName(iTestResult));
+        ExtentReportManager.createExtentTest(iTestResult.getMethod().getDescription());
     }
     @Override
     public void onTestSuccess(ITestResult iTestResult) {

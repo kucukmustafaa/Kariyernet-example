@@ -2,13 +2,15 @@ package Test;
 
 import Base.BaseTest;
 import Page.HomePage.HomePage;
-import com.sun.org.glassfish.gmbal.Description;
+import Utils.TestListener;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+
+@Listeners(TestListener.class)
 public class RegisterPageTest extends BaseTest {
 
-    @Description("Başarılı üyelik oluşturma")
-    @Test
+    @Test(groups = {"regression","smoke"},description = "Başarılı üyelik oluşturma")
     public void test1() {
         new HomePage(getDriver(),wait).
                 closePopup().
@@ -21,8 +23,7 @@ public class RegisterPageTest extends BaseTest {
     }
 
 
-    @Description("Üyeliği bulunan mail adresi ile tekrar üye olma ")
-    @Test
+    @Test(groups = {"regression","smoke"},description = "Üyeliği bulunan mail adresi ile tekrar üye olma")
     public void test2() {
 
         new HomePage(getDriver(),wait).
@@ -38,8 +39,7 @@ public class RegisterPageTest extends BaseTest {
     }
 
 
-    @Description("Input alanlarının min karakter uzunluğu kontrolü")
-    @Test
+    @Test(groups = {"regression"},description = "Input alanlarının min karakter uzunluğu kontrolü")
     public void test3() {
         new HomePage(getDriver(),wait).
                 closePopup().
@@ -54,8 +54,7 @@ public class RegisterPageTest extends BaseTest {
     }
 
 
-    @Description("Input alanlarının max karakter uzunluğu kontrolü")
-    @Test
+    @Test(groups = {"regression"},description = "Input alanlarının max karakter uzunluğu kontrolü")
     public void test4() {
         new HomePage(getDriver(),wait).
                 closePopup().
@@ -69,8 +68,7 @@ public class RegisterPageTest extends BaseTest {
                 verifyPasswordErrorMessage("Şifren 8-20 karakter arasında olmalıdır. Büyük harf, küçük harf ve rakam içermelidir.");
     }
 
-    @Description("Zorunlu Input alanları kontrolü")
-    @Test
+    @Test(groups = {"regression"},description = "Zorunlu Input alanları kontrolü")
     public void test5() {
         new HomePage(getDriver(),wait).
                 closePopup().
@@ -85,8 +83,7 @@ public class RegisterPageTest extends BaseTest {
     }
 
 
-    @Description("Kullanıcı üye olduktan sonra sistemden çıkıp  tekrardan login olması")
-    @Test
+    @Test(groups = {"regression"},description = "Kullanıcı üye olduktan sonra sistemden çıkıp  tekrardan login olması")
     public void test6() {
 
         new HomePage(getDriver(),wait).
@@ -104,8 +101,7 @@ public class RegisterPageTest extends BaseTest {
 
 
 
-    @Description("Kullanıcının sadece zorunlu alanları doldurarak başarılı kayıt kontrolü")
-    @Test
+    @Test(groups = {"regression"},description = "Kullanıcının sadece zorunlu alanları doldurarak başarılı kayıt kontrolü")
     public void test7() {
         new HomePage(getDriver(),wait).
                 closePopup().
@@ -118,8 +114,7 @@ public class RegisterPageTest extends BaseTest {
 
     }
 
-    @Description("Geçersiz karakter içeren eposta ile üye olma")
-    @Test
+    @Test(groups = {"regression"},description = "Geçersiz karakter içeren eposta ile üye olma")
     public void test8() {
 
         new HomePage(getDriver(),wait).
@@ -133,8 +128,7 @@ public class RegisterPageTest extends BaseTest {
     }
 
 
-    @Description("Geçersiz formatta eposta ile üye olma")
-    @Test
+    @Test(groups = {"regression"},description = "Geçersiz formatta eposta ile üye olma")
     public void test9() {
 
         new HomePage(getDriver(),wait).
@@ -149,8 +143,7 @@ public class RegisterPageTest extends BaseTest {
 
     }
 
-    @Description("Geçersiz karakter içeren eposta ile üye olma")
-    @Test
+    @Test(groups = {"regression"},description = "Geçersiz karakter içeren eposta ile üye olma")
     public void test10() {
 
         new HomePage(getDriver(),wait).
@@ -165,8 +158,7 @@ public class RegisterPageTest extends BaseTest {
 
 
 
-    @Description("Hizmet sözleşmesi ve popupları ve checkboxları kontrolü")
-    @Test
+    @Test(groups = {"regression"},description = "Hizmet sözleşmesi ve popupları ve checkboxları kontrolü")
     public void test11() {
 
         new HomePage(getDriver(),wait).

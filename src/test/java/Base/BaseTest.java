@@ -24,7 +24,7 @@ public class BaseTest {
     protected String WEB_URL="https://www.kariyer.net/";
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup () throws MalformedURLException {
         PropertyConfigurator.configure("log4j.properties");
 
@@ -58,7 +58,7 @@ public class BaseTest {
         return driver.get();
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         getDriver().quit();
     }

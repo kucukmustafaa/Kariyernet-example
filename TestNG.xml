@@ -11,15 +11,7 @@
     <test name="com.FirstTest" parallel="methods" thread-count="4">
         <classes>
            <class name="Test.RegisterPageTest">
-               <methods>
-                   <include name="test1"></include>
-                   <include name="test2"></include>
-                   <include name="test3"></include>
-                   <include name="test4"></include>
-                   <include name="test5"></include>
-                   <include name="test6"></include>
 
-               </methods>
            </class>
         </classes>
     </test>
