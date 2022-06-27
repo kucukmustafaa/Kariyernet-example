@@ -1,23 +1,27 @@
-package Page.LoginPage;
+package Page;
 
 import Base.BasePage;
 
-import Page.HomePage.HomePage;
 import Utils.CustomLogger;
 import Utils.DataStore;
-import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 
-import static Page.LoginPage.LoginPageElements.*;
 
 public class LoginPage extends BasePage {
 
     public LoginPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
+
+    public final By emailTextBox=By.id("username");
+    public final By passwordTextBox=By.id("pass");
+    public final By rememberMeButton=By.cssSelector("input[data-test='remember-me-checkbox']");
+    public final By loginButton=By.cssSelector("button[data-test='login-button']");
+
 
     private CustomLogger logger = new CustomLogger(LoginPage.class);
 

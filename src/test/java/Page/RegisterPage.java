@@ -1,22 +1,40 @@
-package Page.RegisterPage;
+package Page;
 
 import Base.BasePage;
 
-import Page.LoginPage.LoginPage;
 import Utils.CustomLogger;
 import Utils.DataStore;
-import Page.HomePage.HomePage;
-import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import static Page.RegisterPage.RegisterPageElements.*;
 
 public class RegisterPage extends BasePage {
 
     public RegisterPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
+
+    private final By nameTextBox=By.id("name");
+    private final By surnameTextBox=By.id("lastName");
+    private final By emailTextBox=By.id("email");
+    private final By passwordTextBox=By.id("password");
+    private final By serviceContactLabel=By.cssSelector("label[class='style-checkbox serviceContactLabel']");
+
+    private final By serviceContactCheckBox=By.id("serviceContact");
+
+    private final By acceptContractButton=By.id("btnModalYesCallback");
+    private final By registerButton=By.xpath("//button[contains(@class,'btn-submit')]");
+
+    private final By nameTextBoxErrorMessage=By.id("name-error");
+    private final By surnameTextBoxErrorMessage=By.id("lastName-error");
+    private final By emailTextBoxErrorMessage=By.id("email-error");
+    private final By passwordTextBoxErrorMessage=By.id("password-error");
+
+    private final By usernameTextLabel=By.cssSelector("div[class='name']>a>span");
+    private final By exitButton=By.xpath("//div[@class='after-login']//a[text()='Çıkış']");
+
+
 
     private CustomLogger logger = new CustomLogger(RegisterPage.class);
 

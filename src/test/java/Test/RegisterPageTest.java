@@ -1,7 +1,7 @@
 package Test;
 
 import Base.BaseTest;
-import Page.HomePage.HomePage;
+import Page.HomePage;
 import org.testng.annotations.Test;
 
 public class RegisterPageTest extends BaseTest {
